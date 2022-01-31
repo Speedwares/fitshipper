@@ -8,10 +8,12 @@ export default function DeleteModal({toggleDeleteModal, show, formData, getData}
 
   const cancelButtonRef = useRef(null);
 
+  const apiUrl = "https://fsl-candidate-api-vvfym.ondigitalocean.app/v1/address/";
+
   //handles the delete operation
   function handleDelete() {
 
-    axios.delete('https://fsl-candidate-api-vvfym.ondigitalocean.app/v1/address/' + formData.id)
+    axios.delete( apiUrl + formData.id)
       .then(res => {
         toggleDeleteModal();
         getData()
